@@ -1,0 +1,24 @@
+# Coding  Geometry SERVER language guide
+# This is a comment. All comments are single-line and start by '#' and end at the end of the line
+
+setpoint <name> <x,y>
+setpoint <name> <other>
+
+setvector <name> <point,point>
+setvector <name> <other>
+
+setcirc <name> <point,radius>
+setcirc <name> <other>
+
+setline <name> <other>
+setline <name> <point,angle>
+
+print <...literaltext>
+println <...literaltext>
+printpoint <point>
+printvector <vector>
+printcirc <circ>
+
+conf <name> <value>
+conf point.autodisplay.info <all|name|coords|none> # default is name
+conf rendering.scale <number between -100 and 100 and different to zero> # default is 10
