@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            th, td
+            {
+                border: 2px solid #000000;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Examples</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Desc</th>
+                <th>Download</th>
+            </tr>
+            <tr>
+                <td>Transformation</td>
+                <td>The sides of a transformed square measure half those of the original.</td>
+                <td><button onclick = "download1();">Download</button></td>
+            </tr>
+            <tr>
+                <td>Trigonometry</td>
+                <td>The representation of the sine and cosine of an angle in a circumference</td>
+                <td><button onclick = "download2();">Download</button></td>
+            </tr>
+            <tr>
+                <td>Mirror</td>
+                <td>A figure gets a symmetrical pair</td>
+                <td><button onclick = "download3();">Download</button></td>
+            </tr>
+            <tr>
+                <td>Surprise</td>
+                <td>Something related to coordinates...</td>
+                <td><button onclick = "download4();">Download</button></td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+<script>
+
+var example1 = "setpoint a -6,2\n\
+setpoint b -2,2\n\
+setpoint c -2,-2\n\
+setpoint d -6,-2\n\
+\n\
+setvector ab a,b\n\
+setvector bc b,c\n\
+setvector cd c,d\n\
+setvector da d,a\n\
+\n\
+setpoint o 8,0\n\
+setvector oa o,a\n\
+setvector ob o,b\n\
+setvector oc o,c\n\
+setvector od o,d\n\
+\n\
+setpoint p 7,2\n\
+setpoint q 6,4\n\
+setvector oq o,q\n\
+setvector aq a,q\n\
+\n\
+setpoint e 1,1\n\
+setpoint f 3,1\n\
+setpoint g 3,-1\n\
+setpoint h 1,-1\n\
+\n\
+setvector pe p,e\n\
+\n\
+setvector ef e,f\n\
+setvector fg f,g\n\
+setvector gh g,h\n\
+setvector he h,e\n\
+\n\
+println  __     __ \n\
+print |OP| = |PQ|";
+
+function download1()
+{
+    var b = new Blob([example1], {"type": "text/plain"});
+    var u = URL.createObjectURL(b);
+    var a = document.createElement("a");
+    a.href = u;
+    a.download ="Transformation.txt";
+    a.click();
+}
+
+var example2 = "setpoint x 0,0\n\
+setline l x,30\n\
+setline m x,0\n\
+setline n x,90\n\
+setcirc c x,4\n\
+\n\
+setpoint a 0,2\n\
+setpoint b 3.4641016151377544,2\n\
+setpoint c 3.4641016151377544,0\n\
+\n\
+setvector ab a,b\n\
+setvector bc b,c\n\
+\n\
+println AB = r * cos(30deg)\n\
+print BC = r * sin(30deg)";
+
+function download2()
+{
+    var b = new Blob([example2], {"type": "text/plain"});
+    var u = URL.createObjectURL(b);
+    var a = document.createElement("a");
+    a.href = u;
+    a.download ="Trigonometry.txt";
+    a.click();
+}
+
+var example3 = "setpoint o 0,0\n\
+setline m o,90\n\
+\n\
+setpoint a1 -2,-2\n\
+setpoint b1 -3,-4\n\
+setpoint c1 -5,1\n\
+\n\
+setvector ab1 a1,b1\n\
+setvector bc1 b1,c1\n\
+setvector ca1 c1,a1\n\
+\n\
+setpoint a2 2,-2\n\
+setpoint b2 3,-4\n\
+setpoint c2 5,1\n\
+\n\
+setvector ab2 a2,b2\n\
+setvector bc2 b2,c2\n\
+setvector ca2 c2,a2\n\
+\n\
+setvector aa a1,a2\n\
+setvector bb b1,b2\n\
+setvector cc c1,c2\n\
+\n\
+print A1A2, B1B2 and C1C2 are perpendicular to the vertical line";
+
+function download3()
+{
+    var b = new Blob([example3], {"type": "text/plain"});
+    var u = URL.createObjectURL(b);
+    var a = document.createElement("a");
+    a.href = u;
+    a.download ="Mirror.txt";
+    a.click();
+}
+
+var example4 = "conf point.autodisplay.info all\n\
+\n\
+setpoint a 0,0\n\
+setpoint b 1,1\n\
+setpoint c 2,-2\n\
+setpoint d -3,-3\n\
+setpoint e -4,4\n\
+setpoint f 5,5\n\
+setpoint g 6,-6\n\
+setpoint h -7,-7\n\
+setpoint i -8,8\n\
+setpoint j 9,9\n\
+setpoint k 10,-10\n\
+\n\
+setvector ab a,b\n\
+setvector bc b,c\n\
+setvector cd c,d\n\
+setvector de d,e\n\
+setvector ef e,f\n\
+setvector fg f,g\n\
+setvector gh g,h\n\
+setvector hi h,i\n\
+setvector ij i,j\n\
+setvector jk j,k";
+
+function download4()
+{
+    var b = new Blob([example4], {"type": "text/plain"});
+    var u = URL.createObjectURL(b);
+    var a = document.createElement("a");
+    a.href = u;
+    a.download ="Surprise.txt";
+    a.click();
+}
+
+</script>
